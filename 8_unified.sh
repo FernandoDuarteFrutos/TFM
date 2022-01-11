@@ -10,10 +10,3 @@ done
 cat *.final.txt > resistomas.pre
 awk -F"\t" '{print $3,$1,$2,$4,$5,$6,$7,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16}' OFS='\t' resistomas.pre > resistomas
 sed -i '1i\Sample\tARO Accession\tGeneID\tORF length\tCounts\tRelative abundance\tCVTERM ID\tModel Sequence ID\tModel ID\tModel Name\tARO Name\tProtein Accession\tDNA Accession\tAMR Gene Family\tDrug Class\tResistance Mechanism' resistomas
-
-#sa
-#gawk -F '[\t|]' 'OFS = "\t" {print $1,$4}' *6.fa.dm > prueba.fa.dm
-
-#join -1 1 -2 1 -t $'\t' <(sort *.cut.counts) <(sort prueba.fa.dm) > prueba.join.txt
-#join -1 1 -2 3 -t $'\t' <(sort aro_index.tsv) <(sort -k3 prueba.join.txt) > xd.txt
-#sed -i '1i\ARO Accession\tCVTERM ID\tModel Sequence ID\tModel ID\tModel Name\tARO Name\tProtein Accession\tDNA Accession\tAMR Gene Family\tDrug Class\tResistance Mechanism\tGeneID\tCounts' xd.txt
